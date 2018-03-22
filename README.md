@@ -50,6 +50,7 @@ $.offPage({
 ## To Do
 - [ ] Refactor collapse code
 - [ ] Add ability to collapse horizontally opened offPage panels
+- [ ] Remove dependency on jQuery, if possible
 
 ## Copyright
 
