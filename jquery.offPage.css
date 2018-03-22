@@ -1,0 +1,271 @@
+/* ---------------
+ *	.OFFPAGE CLASSES
+ * --------------- */
+#offPage,
+.offpage {
+  /* These styles MUST be included. Do not change. */
+  display: none;
+  position: absolute;
+  position: fixed;
+  top: 0;
+  z-index: 999999;
+  height: 100%;
+  /* Specify the width of your offPage here */
+  width: 33%;
+  padding: 0;
+  /* These styles are optional, and describe how the offPage will look */
+  background-color: #383838;
+  color: #e8e8e8;
+  border: 1px solid #2278c9;
+  box-shadow: 0 0 12px -3px rgba(0, 0, 0, 0.33);
+  -webkit-transition: transform 0.54s cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: transform 0.54s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: transform 0.54s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform 0.54s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+#offPage[class*="hor-"],
+.offpage[class*="hor-"] {
+  width: 33%;
+  height: 100%;
+}
+
+/* max-width: 768px; */
+@media only screen and (max-width: 48em) {
+  #offPage[class*="hor-"],
+  .offpage[class*="hor-"] {
+    width: 54%;
+  }
+}
+
+/* max-width: 384px; */
+@media only screen and (max-width: 24em) {
+  #offPage[class*="hor-"],
+  .offpage[class*="hor-"] {
+    width: 86%;
+  }
+}
+
+/* If you choose up/down for direction, offPage will be a fixed height */
+#offPage[class*="vert"],
+.offpage[class*="vert"] {
+  width: 100%;
+  height: 366px;
+}
+
+#offPage.vert-up.collapsing,
+.offpage.vert-up.collapsing {
+  -webkit-transform: translate(0, 366px);
+  -moz-transform: translate(0, 366px);
+  -ms-transform: translate(0, 366px);
+  -o-transform: translate(0, 366px);
+  transform: translate(0, 366px);
+}
+
+#offPage.vert-up.collapsing.collapsed,
+.offpage.vert-up.collapsing.collapsed {
+  -webkit-transform: translate(0, 0) !important;
+  -moz-transform: translate(0, 0) !important;
+  -ms-transform: translate(0, 0) !important;
+  -o-transform: translate(0, 0) !important;
+  transform: translate(0, 0) !important;
+}
+
+#offPage.vert-up.collapsed,
+.offpage.vert-up.collapsed {
+  overflow: visible !important;
+  -webkit-transform: translate(0, 366px);
+  -moz-transform: translate(0, 366px);
+  -ms-transform: translate(0, 366px);
+  -o-transform: translate(0, 366px);
+  transform: translate(0, 366px);
+}
+
+#offPage.vert-down.collapsing,
+.offpage.vert-down.collapsing {
+  -webkit-transform: translate(0, -366px);
+  -moz-transform: translate(0, -366px);
+  -ms-transform: translate(0, -366px);
+  -o-transform: translate(0, -366px);
+  transform: translate(0, -366px);
+}
+
+#offPage.vert-down.collapsing.collapsed,
+.offpage.vert-down.collapsing.collapsed {
+  -webkit-transform: translate(0, 0) !important;
+  -moz-transform: translate(0, 0) !important;
+  -ms-transform: translate(0, 0) !important;
+  -o-transform: translate(0, 0) !important;
+  transform: translate(0, 0) !important;
+}
+
+#offPage.vert-down.collapsed,
+.offpage.vert-down.collapsed {
+  overflow: visible !important;
+  -webkit-transform: translate(0, -366px);
+  -moz-transform: translate(0, -366px);
+  -ms-transform: translate(0, -366px);
+  -o-transform: translate(0, -366px);
+  transform: translate(0, -366px);
+}
+
+/* Contains the close and--if collapsible is true--the collapse/expand button */
+.op-btn-group {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 12px;
+  z-index: 10;
+  background-color: #383838;
+  border: 2px solid #383838;
+  border-radius: 4px;
+  vertical-align: middle;
+  -webkit-transition: top 0.54s cubic-bezier(0.455, 0.03, 0.515, 0.955), bottom 0.54s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -moz-transition: top 0.54s cubic-bezier(0.455, 0.03, 0.515, 0.955), bottom 0.54s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -o-transition: top 0.54s cubic-bezier(0.455, 0.03, 0.515, 0.955), bottom 0.54s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: top 0.54s cubic-bezier(0.455, 0.03, 0.515, 0.955), bottom 0.54s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.op-btn-group button + button {
+  margin-left: -1px;
+}
+
+.op-btn-group button:first-child {
+  border-radius: 0 0 0 4px !important;
+}
+
+.op-btn-group button:last-child {
+  border-radius: 0 0 4px 0 !important;
+}
+
+.op-btn-group button:only-child {
+  border-radius: 0 0 4px 4px !important;
+}
+
+.collapsed .op-btn-group,
+.collapsing .op-btn-group {
+  border-radius: 4px 4px 0 0;
+}
+
+.collapsed .op-btn-group button:first-child,
+.collapsing .op-btn-group button:first-child {
+  border-radius: 4px 0 0 4px !important;
+}
+
+.collapsed .op-btn-group button:last-child,
+.collapsing .op-btn-group button:last-child {
+  border-radius: 0 4px 4px 0 !important;
+}
+
+.collapsed .op-btn-group button:only-child,
+.collapsing .op-btn-group button:only-child {
+  border-radius: 4px !important;
+}
+
+.vert-up.collapsing .op-btn-group,
+.vert-up.collapsed .op-btn-group {
+  top: -40px;
+}
+
+/* max-width: 768px; */
+@media only screen and (max-width: 48em) {
+  .vert-up.collapsing .op-btn-group,
+  .vert-up.collapsed .op-btn-group {
+    top: -46px;
+  }
+}
+
+.vert-down.collapsing .op-btn-group,
+.vert-down.collapsed .op-btn-group {
+  top: auto;
+  bottom: -40px;
+}
+
+/* max-width: 768px; */
+@media only screen and (max-width: 48em) {
+  .vert-down.collapsing .op-btn-group,
+  .vert-down.collapsed .op-btn-group {
+    top: auto;
+    bottom: -46px;
+  }
+}
+
+.op-closebtn,
+.op-collapse-toggle {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  min-height: 36px;
+  margin-top: -1px;
+  padding: 5px 20px;
+  background: #767676;
+  background: rgba(255, 255, 255, 0.54);
+  color: #101010;
+  border: none;
+  border-right: 1px solid #767676;
+  border-bottom: 1px solid #767676;
+  border-left: 1px solid #383838;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 1px 3px 5px -1px rgba(0, 0, 0, 0), inset 0 1px 3px -1px rgba(0, 0, 0, 0);
+  -webkit-transition: background 0.33s ease-in-out;
+  -moz-transition: background 0.33s ease-in-out;
+  -o-transition: background 0.33s ease-in-out;
+  transition: background 0.33s ease-in-out;
+}
+
+.op-closebtn:hover,
+.op-collapse-toggle:hover {
+  background: #dddcdc;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 1px 4px 5px -1px rgba(0, 0, 0, 0.33), inset 0 1px 3px -1px rgba(0, 0, 0, 0.54);
+}
+
+.op-btn-group .op-closebtn,
+.op-btn-group .op-collapse-toggle {
+  float: left;
+}
+
+.collapsed .op-closebtn,
+.collapsed .op-collapse-toggle,
+.collapsing .op-closebtn,
+.collapsing .op-collapse-toggle {
+  margin-top: 0;
+}
+
+/* max-width: 768px; */
+@media only screen and (max-width: 48em) {
+  .op-closebtn,
+  .op-collapse-toggle {
+    min-height: 42px;
+    padding: 8px 20px;
+  }
+}
+
+.op-closebtn .ebsi-icon-remove:before {
+  color: #721c24;
+}
+
+.op-inner {
+  display: block;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  padding: 20px;
+  background: transparent;
+  color: #e8e8e8;
+}
+
+.op-inner:after {
+  content: '';
+  display: table;
+  clear: both;
+  overflow: hidden;
+}
+
+/* Adjust top-padding if btn-group is part of UI */
+.op-btn-group + .op-inner {
+  padding-top: 54px;
+}
